@@ -10,6 +10,10 @@ public class CardComparator implements Comparator<String> {
 	public static int compareValues(String card1, String card2) {
 		return getSortValue(card1).compareTo(getSortValue(card2));
 	}
+	
+	public static boolean valueEquals(String card1, String card2) {
+		return compareValues(card1, card2) == 0;
+	}
 
 	public static Integer getSortValue(String card) {
 		String cardValue = getValue(card);
