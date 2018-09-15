@@ -16,13 +16,14 @@ public class SimplePokerHands {
 	}
 	
 	private String findHighestPairInCards(String[] sortedCards) {
-		String card1 = sortedCards[0];
-		String card2 = sortedCards[1];
-		if (CardComparator.valueEquals(card1, card2)) {
-			return makeHandOfCards(card1, card2);
-		} else {
-			return null;
+		for (int i = sortedCards.length - 1; i > 0; i--) {
+			String card1 = sortedCards[i - 1];
+			String card2 = sortedCards[i];
+			if (CardComparator.valueEquals(card1, card2)) {
+				return makeHandOfCards(card1, card2);
+			}
 		}
+		return null;
 	}
 	
 	
