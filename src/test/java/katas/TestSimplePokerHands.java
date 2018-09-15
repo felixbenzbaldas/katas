@@ -10,17 +10,14 @@ public class TestSimplePokerHands {
 	public void giveHand() {
 		assertEquals("K5", findHand("K5"));
 	}
-	
+
 	@Test
 	public void findHandInSortedCards() {
 		assertEquals("K6", findHand("K4 K6"));
 	}
-	
+
 	public String findHand(String cards) {
-		if (cards.length() > 2) {
-			String[] splittedCards = cards.split(" ");
-			return splittedCards[1];
-		}
-		return "K5";
+		String[] splittedCards = cards.split(" ");
+		return splittedCards[splittedCards.length - 1];
 	}
 }
