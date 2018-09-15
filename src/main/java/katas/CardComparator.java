@@ -10,8 +10,11 @@ public class CardComparator implements Comparator<String> {
 	public String getValue(String card) {
 		return card.substring(1);
 	}
-	
+
 	public Integer getSortValue(String cardValue) {
+		if (cardValue.equals("B")) {
+			return 11;
+		}
 		return Integer.valueOf(getValue(cardValue));
 	}
 }
