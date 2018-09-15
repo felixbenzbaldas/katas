@@ -2,6 +2,8 @@ package katas;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class TestSimplePokerHands {
@@ -18,6 +20,7 @@ public class TestSimplePokerHands {
 
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
+		Arrays.sort(splittedCards);
 		return splittedCards[splittedCards.length - 1];
 	}
 }
