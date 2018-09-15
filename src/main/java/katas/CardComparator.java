@@ -11,10 +11,11 @@ public class CardComparator implements Comparator<String> {
 		return card.substring(1);
 	}
 
-	public Integer getSortValue(String cardValue) {
+	public Integer getSortValue(String card) {
+		String cardValue = getValue(card);
 		if (cardValue.equals("B")) {
 			return 11;
 		}
-		return Integer.valueOf(getValue(cardValue));
+		return Integer.valueOf(cardValue);
 	}
 }
