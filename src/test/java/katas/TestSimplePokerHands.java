@@ -22,8 +22,8 @@ public class TestSimplePokerHands {
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
 		Comparator<String> cardComparator = new Comparator<String>() {
-			public int compare(String o1, String o2) {
-				return o1.compareTo(o2);
+			public int compare(String card1, String card2) {
+				return card1.compareTo(card2);
 			}
 		};
 		Arrays.sort(splittedCards, cardComparator);
