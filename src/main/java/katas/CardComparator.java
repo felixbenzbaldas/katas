@@ -7,7 +7,7 @@ public class CardComparator implements Comparator<String> {
 		return getSortValue(card1).compareTo(getSortValue(card2));
 	}
 
-	public String getValue(String card) {
+	public static String getValue(String card) {
 		return card.substring(1);
 	}
 
