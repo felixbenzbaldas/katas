@@ -21,15 +21,12 @@ public class TestSimplePokerHands {
 
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
-		Arrays.sort(splittedCards);
 		Comparator<String> cardComparator = new Comparator<String>() {
-
 			public int compare(String o1, String o2) {
-				// TODO Auto-generated method stub
-				return 0;
+				return o1.compareTo(o2);
 			}
-			
 		};
+		Arrays.sort(splittedCards, cardComparator);
 		
 		return splittedCards[splittedCards.length - 1];
 	}
