@@ -8,31 +8,30 @@ public class TestSimplePokerHands {
 
 	@Test
 	public void findHandUnortedCards() {
-		testExpectedActual("K7", "K4 K7 K6");
+		testExpectedForCards("K7", "K4 K7 K6");
 	}
 	
 	@Test
 	public void findHand_images() {
-		testExpectedActual("KD", "K4 KD K6");
+		testExpectedForCards("KD", "K4 KD K6");
 	}
 	
 	@Test
 	public void findHand_multiColors() {
-		testExpectedActual("C8", "C8 K2");
+		testExpectedForCards("C8", "C8 K2");
 	}
 
 	@Test
 	public void findHand_ten() {
-		testExpectedActual("K10", "K4 K10 K6");
+		testExpectedForCards("K10", "K4 K10 K6");
 	}
-	
 	
 	@Test
 	public void findPair() {
-		testExpectedActual("K5 C5", "K5 C5");
+		testExpectedForCards("K5 C5", "K5 C5");
 	}
 
-	private void testExpectedActual(String expected, String actual) {
+	private void testExpectedForCards(String expected, String actual) {
 		assertEquals(expected, findHand(actual));
 	}
 
