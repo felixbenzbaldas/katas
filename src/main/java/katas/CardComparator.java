@@ -16,6 +16,9 @@ public class CardComparator implements Comparator<String> {
 		if (cardValue.equals("B")) {
 			return 11;
 		}
+		if (cardValue.equals("D")) {
+			return 12;
+		}
 		return Integer.valueOf(cardValue);
 	}
 }

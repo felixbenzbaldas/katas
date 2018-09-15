@@ -20,6 +20,11 @@ public class TestSimplePokerHands {
 	}
 	
 	@Test
+	public void findHand_images() {
+		assertEquals("KD", findHand("K4 KD K6"));
+	}
+	
+	@Test
 	public void findHand_multiColors() {
 		assertEquals("C8", findHand("C8 K2"));
 	}
