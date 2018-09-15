@@ -34,12 +34,12 @@ public class TestSimplePokerHands {
 		assertEquals("K5 C5", findHand("K5 C5"));
 	}
 	
-	public String findHand(String cards) {
-		String[] splittedCards = cards.split(" ");
-		String pair = findPairInCards(splittedCards[0], splittedCards[1]);
+	public String findHand(String cardsString) {
+		String[] sortedCards = cardsString.split(" ");
+		String pair = findPairInCards(sortedCards[0], sortedCards[1]);
 		if (pair == null) {
-			Arrays.sort(splittedCards, new CardComparator());
-			return splittedCards[splittedCards.length - 1];
+			Arrays.sort(sortedCards, new CardComparator());
+			return sortedCards[sortedCards.length - 1];
 		} else {
 			return pair;
 		}
