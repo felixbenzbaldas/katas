@@ -1,15 +1,19 @@
 package katas;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Hand {
-	private Set<String> cards;
+	private Set<String> cards = cards = new HashSet<String>();
 
 	public Hand(String card1, String card2) {
-		cards = new HashSet<String>();
 		cards.add(card1);
 		cards.add(card2);
+	}
+	
+	public Hand(Collection<String> cards) {
+		cards.addAll(cards);
 	}
 
 	@Override
