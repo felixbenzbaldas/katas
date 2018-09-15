@@ -15,6 +15,10 @@ public class TestSimplePokerHands {
 	public void findHand_images() {
 		testExpectedForCards("KD", "K4 KD K6");
 	}
+	@Test
+	public void findHand_images2() {
+		testExpectedForCards("CA", "K4 KD K6 CA CB");
+	}
 	
 	@Test
 	public void findHand_multiColors() {

@@ -23,6 +23,12 @@ public class CardComparator implements Comparator<String> {
 		if (cardValue.equals("D")) {
 			return 12;
 		}
+		if (cardValue.equals("K")) {
+			return 13;
+		}
+		if (cardValue.equals("A")) {
+			return 14;
+		}
 		return Integer.valueOf(cardValue);
 	}
 	
