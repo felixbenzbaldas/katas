@@ -31,6 +31,9 @@ public class TestSimplePokerHands {
 
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
+		if (CardComparator.compareValues(splittedCards[0], splittedCards[1]) == 0) {
+			return splittedCards[0] + " " + splittedCards[1];
+		}
 		Arrays.sort(splittedCards, new CardComparator());
 		return splittedCards[splittedCards.length - 1];
 	}

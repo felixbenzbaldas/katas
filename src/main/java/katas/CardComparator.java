@@ -25,5 +25,4 @@ public class CardComparator implements Comparator<String> {
 	public static String getValue(String card) {
 		return card.substring(1);
 	}
-	
 }
