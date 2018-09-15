@@ -32,16 +32,7 @@ public class TestSimplePokerHands {
 
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
-		Comparator<String> cardComparator = new Comparator<String>() {
-			public int compare(String card1, String card2) {
-				return getValue(card1).compareTo(getValue(card2));
-			}
-		};
-		Arrays.sort(splittedCards, cardComparator);
+		Arrays.sort(splittedCards, new CardComparator());
 		return splittedCards[splittedCards.length - 1];
-	}
-	
-	public Integer getValue(String card) {
-		return Integer.valueOf(card.substring(1));
 	}
 }
