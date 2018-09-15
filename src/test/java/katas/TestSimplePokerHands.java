@@ -18,12 +18,17 @@ public class TestSimplePokerHands {
 	public void findHandUnortedCards() {
 		assertEquals("K7", findHand("K4 K7 K6"));
 	}
+	
+	@Test
+	public void findHand_multiColors() {
+		assertEquals("C8", findHand("C8 K2"));
+	}
 
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
 		Comparator<String> cardComparator = new Comparator<String>() {
 			public int compare(String card1, String card2) {
-				return card1.compareTo(card2);
+				return getValue(card1).compareTo(getValue(card2));
 			}
 		};
 		Arrays.sort(splittedCards, cardComparator);
@@ -34,6 +39,4 @@ public class TestSimplePokerHands {
 	public String getValue(String card) {
 		return card.substring(1);
 	}
-	
-	
 }
