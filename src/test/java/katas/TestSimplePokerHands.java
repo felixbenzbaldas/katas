@@ -12,10 +12,10 @@ public class TestSimplePokerHands {
 	public void giveHand() {
 		assertEquals("K5", findHand("K5"));
 	}
-
+	
 	@Test
-	public void findHandInSortedCards() {
-		assertEquals("K6", findHand("K4 K6"));
+	public void findHandUnortedCards() {
+		assertEquals("K7", findHand("K4 K7 K6"));
 	}
 
 	public String findHand(String cards) {
