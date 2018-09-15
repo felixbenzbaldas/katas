@@ -5,14 +5,18 @@ import java.util.Arrays;
 public class SimplePokerHands {
 	
 	public String findHand(String cardsString) {
-		String[] sortedCards = cardsString.split(" ");
-		Arrays.sort(sortedCards, new CardComparator());
+		String[] sortedCards = sortCards(cardsString.split(" "));
 		String pair = findHighestPairInCards(sortedCards);
 		if (pair == null) {
 			return sortedCards[sortedCards.length - 1];
 		} else {
 			return pair;
 		}
+	}
+	
+	private String[] sortCards(String[] cards) {
+		Arrays.sort(cards, new CardComparator());
+		return cards;
 	}
 	
 	private String findHighestPairInCards(String[] sortedCards) {
