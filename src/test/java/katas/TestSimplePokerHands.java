@@ -24,6 +24,12 @@ public class TestSimplePokerHands {
 		assertEquals("C8", findHand("C8 K2"));
 	}
 
+	@Test
+	public void findHand_ten() {
+		assertEquals("K10", findHand("K4 K10 K6"));
+	}
+	
+
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
 		Comparator<String> cardComparator = new Comparator<String>() {
@@ -32,11 +38,10 @@ public class TestSimplePokerHands {
 			}
 		};
 		Arrays.sort(splittedCards, cardComparator);
-		
 		return splittedCards[splittedCards.length - 1];
 	}
 	
-	public String getValue(String card) {
-		return card.substring(1);
+	public Integer getValue(String card) {
+		return Integer.valueOf(card.substring(1));
 	}
 }
