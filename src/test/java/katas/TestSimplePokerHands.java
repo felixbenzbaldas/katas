@@ -18,7 +18,8 @@ public class TestSimplePokerHands {
 	
 	public String findHand(String cards) {
 		if (cards.length() > 2) {
-			return "K6";
+			String[] splittedCards = cards.split(" ");
+			return splittedCards[1];
 		}
 		return "K5";
 	}
