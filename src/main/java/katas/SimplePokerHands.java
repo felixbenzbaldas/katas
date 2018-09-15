@@ -6,9 +6,9 @@ public class SimplePokerHands {
 	
 	public String findHand(String cardsString) {
 		String[] sortedCards = cardsString.split(" ");
+		Arrays.sort(sortedCards, new CardComparator());
 		String pair = findHighestPairInCards(sortedCards);
 		if (pair == null) {
-			Arrays.sort(sortedCards, new CardComparator());
 			return sortedCards[sortedCards.length - 1];
 		} else {
 			return pair;
