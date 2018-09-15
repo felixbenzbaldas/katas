@@ -11,7 +11,7 @@ public class CardComparator implements Comparator<String> {
 		return card.substring(1);
 	}
 	
-	public Integer getSortValue(String card) {
-		return Integer.valueOf(getValue(card));
+	public Integer getSortValue(String cardValue) {
+		return Integer.valueOf(getValue(cardValue));
 	}
 }
