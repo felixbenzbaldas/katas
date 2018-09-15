@@ -30,6 +30,11 @@ public class TestSimplePokerHands {
 	public void findPair() {
 		testExpectedForCards("K5 C5", "K5 C5");
 	}
+	
+	@Test
+	public void findPair2() {
+		testExpectedForCards("K5 C5", "K5 C5 K8");
+	}
 
 	private void testExpectedForCards(String expected, String actual) {
 		assertEquals(expected, findHand(actual));
