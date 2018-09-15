@@ -5,14 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Hand {
-	private Set<String> cards = cards = new HashSet<String>();
+	private Set<String> cards = new HashSet<String>();
 
-	public Hand(String card1, String card2) {
-		cards.add(card1);
-		cards.add(card2);
-	}
-	
 	public Hand(Collection<String> cards) {
+		if (cards.size() > 2) {
+			throw new IllegalArgumentException();
+		}
 		cards.addAll(cards);
 	}
 
