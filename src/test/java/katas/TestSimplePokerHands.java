@@ -36,10 +36,20 @@ public class TestSimplePokerHands {
 	
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
-		if (CardComparator.compareValues(splittedCards[0], splittedCards[1]) == 0) {
-			return splittedCards[0] + " " + splittedCards[1];
+		String pair = findPairInCards(splittedCards[0], splittedCards[1]);
+		if (pair == null) {
+			Arrays.sort(splittedCards, new CardComparator());
+			return splittedCards[splittedCards.length - 1];
+		} else {
+			return pair;
 		}
-		Arrays.sort(splittedCards, new CardComparator());
-		return splittedCards[splittedCards.length - 1];
+	}
+	
+	private String findPairInCards(String card1, String card2) {
+		if (CardComparator.compareValues(card1, card2) == 0) {
+			return card1 + " " + card2;
+		} else {
+			return null;
+		}
 	}
 }
