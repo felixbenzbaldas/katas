@@ -28,7 +28,6 @@ public class TestSimplePokerHands {
 	public void findHand_ten() {
 		assertEquals("K10", findHand("K4 K10 K6"));
 	}
-	
 
 	public String findHand(String cards) {
 		String[] splittedCards = cards.split(" ");
