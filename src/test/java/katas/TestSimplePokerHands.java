@@ -36,7 +36,7 @@ public class TestSimplePokerHands {
 	
 	public String findHand(String cardsString) {
 		String[] sortedCards = cardsString.split(" ");
-		String pair = findPairInCards(sortedCards[0], sortedCards[1]);
+		String pair = findPairInCards(sortedCards);
 		if (pair == null) {
 			Arrays.sort(sortedCards, new CardComparator());
 			return sortedCards[sortedCards.length - 1];
@@ -45,7 +45,9 @@ public class TestSimplePokerHands {
 		}
 	}
 	
-	private String findPairInCards(String card1, String card2) {
+	private String findPairInCards(String[] sortedCards) {
+		String card1 = sortedCards[0];
+		String card2 = sortedCards[1];
 		if (CardComparator.compareValues(card1, card2) == 0) {
 			return card1 + " " + card2;
 		} else {
