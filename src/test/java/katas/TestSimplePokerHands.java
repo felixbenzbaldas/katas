@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestSimplePokerHands {
 
 	@Test
-	public void findHandUnortedCards() {
+	public void findHandUnsortedCards() {
 		testExpectedForCards("K7", "K4 K7 K6");
 	}
 	
