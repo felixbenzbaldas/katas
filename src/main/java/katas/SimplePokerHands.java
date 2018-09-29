@@ -25,7 +25,7 @@ public class SimplePokerHands {
 			Card card2 = new Card();
 			card1.cardString = sortedCards[i - 1];
 			card2.cardString = sortedCards[i];
-			if (CardComparator.valueEquals(card1, card2)) {
+			if (card1.getValue().equals(card2.getValue())) {
 				return makeHandOfCards(card1.cardString, card2.cardString);
 			}
 		}

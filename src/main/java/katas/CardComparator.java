@@ -11,10 +11,6 @@ public class CardComparator implements Comparator<String> {
 		return getSortValue(card1).compareTo(getSortValue(card2));
 	}
 	
-	public static boolean valueEquals(Card card1, Card card2) {
-		return compareValues(card1.cardString, card2.cardString) == 0;
-	}
-
 	public static Integer getSortValue(String card) {
 		Card cardObject = new Card();
 		cardObject.cardString = card;
