@@ -12,8 +12,7 @@ public class CardComparator implements Comparator<String> {
 	}
 	
 	public static Integer getSortValue(String card) {
-		Card cardObject = new Card();
-		cardObject.cardString = card;
+		Card cardObject = new Card(card);
 		String cardValue = cardObject.getValue();
 		if (cardValue.equals("B")) {
 			return 11;
