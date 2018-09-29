@@ -26,19 +26,16 @@ public class SimplePokerHands {
 			Card card1 = new Card(sortedCards[i - 1]);
 			Card card2 = new Card(sortedCards[i]);
 			if (card1.getValue().equals(card2.getValue())) {
-				List<Card> cards = new LinkedList<Card>();
-				cards.add(card1);
-				cards.add(card2);
-				return toCardsString(cards);
+				return toCardsString(card1, card2);
 			}
 		}
 		return null;
 	}
 
-	private String toCardsString(List<Card> listOfCards) {
-		String toReturn = listOfCards.get(0).cardString;
+	private String toCardsString(Card... cards) {
+		String toReturn = cards[0].cardString;
 		for (int i = 1; i < 2; i++) {
-			toReturn += " " + listOfCards.get(i).cardString;
+			toReturn += " " + cards[i].cardString;
 		}
 		return toReturn;
 	}
