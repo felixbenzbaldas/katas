@@ -4,16 +4,17 @@ import java.util.Comparator;
 
 public class CardComparator implements Comparator<String> {
 	public int compare(String card1, String card2) {
-		return compareValues(card1, card2);
+		Card cardObject1 = new Card(card1);
+		Card cardObject2 = new Card(card2);
+		return compareValues(cardObject1, cardObject2);
 	}
 
-	private static int compareValues(String card1, String card2) {
+	private static int compareValues(Card card1, Card card2) {
 		return getSortValue(card1).compareTo(getSortValue(card2));
 	}
 	
-	private static Integer getSortValue(String card) {
-		Card cardObject = new Card(card);
-		String cardValue = cardObject.getValue();
+	private static Integer getSortValue(Card card) {
+		String cardValue = card.getValue();
 		if (cardValue.equals("B")) {
 			return 11;
 		}
