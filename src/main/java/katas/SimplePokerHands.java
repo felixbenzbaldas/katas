@@ -26,10 +26,10 @@ public class SimplePokerHands {
 			Card card1 = new Card(sortedCards[i - 1]);
 			Card card2 = new Card(sortedCards[i]);
 			if (card1.getValue().equals(card2.getValue())) {
-				List<Card> listOfCards = new LinkedList<Card>();
-				listOfCards.add(card1);
-				listOfCards.add(card2);
-				return toCardsString(listOfCards);
+				List<Card> cards = new LinkedList<Card>();
+				cards.add(card1);
+				cards.add(card2);
+				return toCardsString(cards);
 			}
 		}
 		return null;
@@ -39,7 +39,6 @@ public class SimplePokerHands {
 		String toReturn = listOfCards.get(0).cardString;
 		for (int i = 1; i < 2; i++) {
 			toReturn += " " + listOfCards.get(i).cardString;
-
 		}
 		return toReturn;
 	}
