@@ -16,7 +16,9 @@ public class CardComparator implements Comparator<String> {
 	}
 
 	public static Integer getSortValue(String card) {
-		String cardValue = getValue(card);
+		Card cardObject = new Card();
+		cardObject.cardString = card;
+		String cardValue = getValue(cardObject);
 		if (cardValue.equals("B")) {
 			return 11;
 		}
@@ -32,9 +34,7 @@ public class CardComparator implements Comparator<String> {
 		return Integer.valueOf(cardValue);
 	}
 	
-	public static String getValue(String card) {
-		Card cardObject = new Card();
-		cardObject.cardString = card;
-		return cardObject.cardString.substring(1);
+	public static String getValue(Card card) {
+		return card.cardString.substring(1);
 	}
 }
