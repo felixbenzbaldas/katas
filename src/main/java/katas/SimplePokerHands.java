@@ -1,6 +1,8 @@
 package katas;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class SimplePokerHands {
 
@@ -24,16 +26,19 @@ public class SimplePokerHands {
 			Card card1 = new Card(sortedCards[i - 1]);
 			Card card2 = new Card(sortedCards[i]);
 			if (card1.getValue().equals(card2.getValue())) {
-				return toCardsString(card1, card2);
+				List<Card> listOfCards = new LinkedList<Card>();
+				listOfCards.add(card1);
+				listOfCards.add(card2);
+				return toCardsString(listOfCards);
 			}
 		}
 		return null;
 	}
 
-	private String toCardsString(Card card1, Card card2) {
-		String toReturn = card1.cardString;
-		for (int i = 0; i < 1; i++) {
-			toReturn += " " + card2.cardString;
+	private String toCardsString(List<Card> listOfCards) {
+		String toReturn = listOfCards.get(0).cardString;
+		for (int i = 1; i < 2; i++) {
+			toReturn += " " + listOfCards.get(i).cardString;
 
 		}
 		return toReturn;
