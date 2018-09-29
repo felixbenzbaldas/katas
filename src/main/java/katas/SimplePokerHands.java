@@ -21,10 +21,12 @@ public class SimplePokerHands {
 	
 	private String findHighestPairInSortedCards(String[] sortedCards) {
 		for (int i = sortedCards.length - 1; i > 0; i--) {
-			String card1 = sortedCards[i - 1];
-			String card2 = sortedCards[i];
+			Card card1 = new Card();
+			Card card2 = new Card();
+			card1.cardString = sortedCards[i - 1];
+			card2.cardString = sortedCards[i];
 			if (CardComparator.valueEquals(card1, card2)) {
-				return makeHandOfCards(card1, card2);
+				return makeHandOfCards(card1.cardString, card2.cardString);
 			}
 		}
 		return null;
