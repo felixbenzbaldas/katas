@@ -33,6 +33,8 @@ public class CardComparator implements Comparator<String> {
 	}
 	
 	public static String getValue(String card) {
-		return card.substring(1);
+		Card cardObject = new Card();
+		cardObject.cardString = card;
+		return cardObject.cardString.substring(1);
 	}
 }
