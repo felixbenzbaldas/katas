@@ -42,7 +42,7 @@ public class TestSimplePokerHands {
 	
 	@Test
 	public void findPair_twoPairs() {
-		testExpectedForCards("K5 C5", "K5 C5 K2 C2 K9");
+		testExpectedForCards("K5 C5", "K5 C2 K2 C5 K9");
 	}
 
 	private void testExpectedForCards(String expected, String actual) {
