@@ -1,14 +1,12 @@
 package katas;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 public class SimplePokerHands {
 
 	public String findHand(String cardsString) {
 		String[] sortedCards = sortCards(cardsString.split(" "));
-		String pair = findHighestPairInSortedCards(sortedCards);
+		String pair = findHighestPairInSortedCards(transform(sortedCards));
 		if (pair == null) {
 			return sortedCards[sortedCards.length - 1];
 		} else {
@@ -29,10 +27,10 @@ public class SimplePokerHands {
 		return cardArray;
 	}
 
-	private String findHighestPairInSortedCards(String[] sortedCards) {
+	private String findHighestPairInSortedCards(Card[] sortedCards) {
 		for (int i = sortedCards.length - 1; i > 0; i--) {
-			Card card1 = new Card(sortedCards[i - 1]);
-			Card card2 = new Card(sortedCards[i]);
+			Card card1 = sortedCards[i - 1];
+			Card card2 = sortedCards[i];
 			if (card1.getValue().equals(card2.getValue())) {
 				return toCardsString(card1, card2);
 			}
