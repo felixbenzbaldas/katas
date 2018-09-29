@@ -7,11 +7,11 @@ public class CardComparator implements Comparator<String> {
 		return compareValues(card1, card2);
 	}
 
-	public static int compareValues(String card1, String card2) {
+	private static int compareValues(String card1, String card2) {
 		return getSortValue(card1).compareTo(getSortValue(card2));
 	}
 	
-	public static Integer getSortValue(String card) {
+	private static Integer getSortValue(String card) {
 		Card cardObject = new Card(card);
 		String cardValue = cardObject.getValue();
 		if (cardValue.equals("B")) {
