@@ -6,7 +6,7 @@ public class SimplePokerHands {
 	
 	public String findHand(String cardsString) {
 		String[] sortedCards = sortCards(cardsString.split(" "));
-		String pair = findHighestPairInCards(sortedCards);
+		String pair = findHighestPairInSortedCards(sortedCards);
 		if (pair == null) {
 			return sortedCards[sortedCards.length - 1];
 		} else {
@@ -19,7 +19,7 @@ public class SimplePokerHands {
 		return cards;
 	}
 	
-	private String findHighestPairInCards(String[] sortedCards) {
+	private String findHighestPairInSortedCards(String[] sortedCards) {
 		for (int i = sortedCards.length - 1; i > 0; i--) {
 			String card1 = sortedCards[i - 1];
 			String card2 = sortedCards[i];
