@@ -20,6 +20,14 @@ public class SimplePokerHands {
 		Arrays.sort(cards, new CardComparator());
 		return cards;
 	}
+	
+	private Card[] transform(String[] cardStringArray) {
+		Card[] cardArray = new Card[cardStringArray.length];
+		for (int i = 0; i < cardStringArray.length; i++) {
+			cardArray[i] = new Card(cardStringArray[i]);
+		}
+		return cardArray;
+	}
 
 	private String findHighestPairInSortedCards(String[] sortedCards) {
 		for (int i = sortedCards.length - 1; i > 0; i--) {
@@ -39,5 +47,4 @@ public class SimplePokerHands {
 		}
 		return toReturn;
 	}
-
 }
