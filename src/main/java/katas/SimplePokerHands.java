@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SimplePokerHands {
 
 	public String findHand(String cardsString) {
-		Card[] cardsArray = transform(cardsString.split(" "));
+		Card[] cardsArray = transformToCardArray(cardsString);
 		Arrays.sort(cardsArray);
 		String pair = findHighestPairInSortedCards(cardsArray);
 		if (pair == null) {
@@ -13,6 +13,10 @@ public class SimplePokerHands {
 		} else {
 			return pair;
 		}
+	}
+	
+	private Card[] transformToCardArray(String cardsString) {
+		return transform(cardsString.split(" "));
 	}
 
 	private Card[] transform(String[] cardStringArray) {
