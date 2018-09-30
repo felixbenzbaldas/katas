@@ -13,6 +13,6 @@ public class Card implements Comparable<Card> {
 	}
 
 	public int compareTo(Card o) {
-		return new CardComparator().compare(this.cardString, o.cardString);
+		return new CardComparator().compare(this, o);
 	}
 }

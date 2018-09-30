@@ -2,11 +2,10 @@ package katas;
 
 import java.util.Comparator;
 
-public class CardComparator implements Comparator<String> {
-	public int compare(String card1, String card2) {
-		Card cardObject1 = new Card(card1);
-		Card cardObject2 = new Card(card2);
-		return compareValues(cardObject1, cardObject2);
+public class CardComparator implements Comparator<Card> {
+	
+	public int compare(Card card1, Card card2) {
+		return compareValues(card1, card2);
 	}
 
 	private static int compareValues(Card card1, Card card2) {
