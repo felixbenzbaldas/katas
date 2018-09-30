@@ -7,11 +7,11 @@ public class SimplePokerHands {
 	public String findHand(String cardsString) {
 		Card[] cardsArray = transformToCardArray(cardsString);
 		Arrays.sort(cardsArray);
-		String pair = findHighestPairInSortedCards(cardsArray);
-		if (pair == null) {
+		Card[] handCardsArray = findHighestPairInSortedCards(cardsArray);
+		if (handCardsArray == null) {
 			return cardsArray[cardsArray.length - 1].cardString;
 		} else {
-			return pair;
+			return toCardsString(handCardsArray[0], handCardsArray[1]);
 		}
 	}
 	
@@ -27,12 +27,12 @@ public class SimplePokerHands {
 		return cardArray;
 	}
 
-	private String findHighestPairInSortedCards(Card[] sortedCards) {
+	private Card[] findHighestPairInSortedCards(Card[] sortedCards) {
 		for (int i = sortedCards.length - 1; i > 0; i--) {
 			Card card1 = sortedCards[i - 1];
 			Card card2 = sortedCards[i];
 			if (card1.getValue().equals(card2.getValue())) {
-				return toCardsString(card1, card2);
+				return new Card[] {card1, card2};
 			}
 		}
 		return null;
