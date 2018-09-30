@@ -6,12 +6,16 @@ public class SimplePokerHands {
 
 	public String findHand(String cardsString) {
 		Card[] cardsArray = transformToCardArray(cardsString);
-		Arrays.sort(cardsArray);
-		Card[] handCardsArray = findHighestPairInSortedCards(cardsArray);
-		if (handCardsArray == null) {
-			handCardsArray = new Card[] {cardsArray[cardsArray.length - 1]};
+		return toCardsString(findHandLogic(cardsArray));
+	}
+
+	private Card[] findHandLogic(Card[] cards) {
+		Arrays.sort(cards);
+		Card[] toReturn = findHighestPairInSortedCards(cards);
+		if (toReturn == null) {
+			toReturn = new Card[]{cards[cards.length - 1]};
 		}
-		return toCardsString(handCardsArray);
+		return toReturn;
 	}
 	
 	private Card[] transformToCardArray(String cardsString) {
