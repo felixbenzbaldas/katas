@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SimplePokerHandsLogic {
 
-	public Card[] findHandLogic(Card[] cards) {
+	public Card[] findHand(Card[] cards) {
 		Arrays.sort(cards);
 		Card[] toReturn = findHighestPairInSortedCards(cards);
 		if (toReturn == null) {

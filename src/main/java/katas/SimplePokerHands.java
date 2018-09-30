@@ -4,7 +4,7 @@ public class SimplePokerHands {
 
 	public String findHand(String cardsString) {
 		Card[] cardsArray = transformToCardArray(cardsString);
-		return toCardsString(new SimplePokerHandsLogic().findHandLogic(cardsArray));
+		return toCardsString(new SimplePokerHandsLogic().findHand(cardsArray));
 	}
 
 	private Card[] transformToCardArray(String cardsString) {
