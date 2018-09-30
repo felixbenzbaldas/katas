@@ -11,7 +11,7 @@ public class SimplePokerHands {
 		if (handCardsArray == null) {
 			return cardsArray[cardsArray.length - 1].cardString;
 		} else {
-			return toCardsString(handCardsArray[0], handCardsArray[1]);
+			return toCardsString(handCardsArray);
 		}
 	}
 	
@@ -38,7 +38,7 @@ public class SimplePokerHands {
 		return null;
 	}
 
-	private String toCardsString(Card... cards) {
+	private String toCardsString(Card[] cards) {
 		String toReturn = cards[0].cardString;
 		for (int i = 1; i < 2; i++) {
 			toReturn += " " + cards[i].cardString;
