@@ -9,10 +9,10 @@ public class SimplePokerHands {
 		Arrays.sort(cardsArray);
 		Card[] handCardsArray = findHighestPairInSortedCards(cardsArray);
 		if (handCardsArray == null) {
-			return cardsArray[cardsArray.length - 1].cardString;
-		} else {
-			return toCardsString(handCardsArray);
+			handCardsArray = new Card[] {cardsArray[cardsArray.length - 1]};
 		}
+		return toCardsString(handCardsArray);
+		
 	}
 	
 	private Card[] transformToCardArray(String cardsString) {
@@ -40,7 +40,7 @@ public class SimplePokerHands {
 
 	private String toCardsString(Card[] cards) {
 		String toReturn = cards[0].cardString;
-		for (int i = 1; i < 2; i++) {
+		for (int i = 1; i < cards.length; i++) {
 			toReturn += " " + cards[i].cardString;
 		}
 		return toReturn;
