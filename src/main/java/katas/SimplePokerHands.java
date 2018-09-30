@@ -12,7 +12,6 @@ public class SimplePokerHands {
 			handCardsArray = new Card[] {cardsArray[cardsArray.length - 1]};
 		}
 		return toCardsString(handCardsArray);
-		
 	}
 	
 	private Card[] transformToCardArray(String cardsString) {
