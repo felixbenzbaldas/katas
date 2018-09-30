@@ -19,10 +19,10 @@ public class SimplePokerHands {
 	}
 	
 	private Card[] transformToCardArray(String cardsString) {
-		return transform(cardsString.split(" "));
+		return transformToCardArrayFromStringArray(cardsString.split(" "));
 	}
 
-	private Card[] transform(String[] cardStringArray) {
+	private Card[] transformToCardArrayFromStringArray(String[] cardStringArray) {
 		Card[] cardArray = new Card[cardStringArray.length];
 		for (int i = 0; i < cardStringArray.length; i++) {
 			cardArray[i] = new Card(cardStringArray[i]);
