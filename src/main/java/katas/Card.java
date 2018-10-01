@@ -13,7 +13,7 @@ public class Card implements Comparable<Card> {
 	}
 
 	public int compareTo(Card o) {
-		return new CardComparator().compare(this, o);
+		return new CardValueComparator().compare(this, o);
 	}
 	
 	@Override

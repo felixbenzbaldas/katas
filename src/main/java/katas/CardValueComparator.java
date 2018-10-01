@@ -2,7 +2,7 @@ package katas;
 
 import java.util.Comparator;
 
-public class CardComparator implements Comparator<Card> {
+public class CardValueComparator implements Comparator<Card> {
 	
 	public int compare(Card card1, Card card2) {
 		return getSortValue(card1).compareTo(getSortValue(card2));
