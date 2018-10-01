@@ -1,7 +1,7 @@
 package katas;
 
 public class Card implements Comparable<Card> {
-	String cardString;
+	private String cardString;
 	
 	public String getValue() {
 		return cardString.substring(1);
@@ -14,5 +14,10 @@ public class Card implements Comparable<Card> {
 
 	public int compareTo(Card o) {
 		return new CardComparator().compare(this, o);
+	}
+	
+	@Override
+	public String toString() {
+		return cardString;
 	}
 }

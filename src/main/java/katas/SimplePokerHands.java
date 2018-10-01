@@ -20,9 +20,9 @@ public class SimplePokerHands {
 	}
 	
 	private String toCardsString(Card[] cards) {
-		String toReturn = cards[0].cardString;
+		String toReturn = cards[0].toString();
 		for (int i = 1; i < cards.length; i++) {
-			toReturn += " " + cards[i].cardString;
+			toReturn += " " + cards[i];
 		}
 		return toReturn;
 	}
