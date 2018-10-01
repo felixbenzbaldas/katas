@@ -5,7 +5,6 @@ public class Card implements Comparable<Card> {
 	private String cardString;
 	
 	public Card(String cardString) {
-		super();
 		this.cardString = cardString;
 	}
 	

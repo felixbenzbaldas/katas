@@ -15,8 +15,9 @@ public class TestSimplePokerHands {
 	public void findHand_images() {
 		testExpectedForCards("KD", "K4 KD K6");
 	}
+	
 	@Test
-	public void findHand_images2() {
+	public void findHand_imagesAndAs() {
 		testExpectedForCards("CA", "K4 KD K6 CA CB");
 	}
 	
@@ -32,11 +33,6 @@ public class TestSimplePokerHands {
 	
 	@Test
 	public void findPair() {
-		testExpectedForCards("K5 C5", "K5 C5");
-	}
-	
-	@Test
-	public void findPair2() {
 		testExpectedForCards("K5 C5", "K5 C5 K8");
 	}
 	
