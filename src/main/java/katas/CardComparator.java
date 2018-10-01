@@ -5,10 +5,6 @@ import java.util.Comparator;
 public class CardComparator implements Comparator<Card> {
 	
 	public int compare(Card card1, Card card2) {
-		return compareValues(card1, card2);
-	}
-
-	private static int compareValues(Card card1, Card card2) {
 		return getSortValue(card1).compareTo(getSortValue(card2));
 	}
 	
