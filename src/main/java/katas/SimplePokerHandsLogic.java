@@ -6,11 +6,11 @@ public class SimplePokerHandsLogic {
 
 	public Card[] findHand(Card[] cards) {
 		Arrays.sort(cards);
-		Card[] toReturn = findHighestPairInSortedCards(cards);
-		if (toReturn == null) {
-			toReturn = new Card[] { cards[cards.length - 1] };
+		Card[] hand = findHighestPairInSortedCards(cards);
+		if (hand == null) {
+			hand = new Card[] { cards[cards.length - 1] };
 		}
-		return toReturn;
+		return hand;
 	}
 
 	private Card[] findHighestPairInSortedCards(Card[] sortedCards) {
